@@ -22,6 +22,8 @@ string csvFilePath = string.Empty;
 //    // display arg values and move on.
 //}
 
+
+
 ////add defensive coding.
 ////check that the file exists.
 ////add while loop to keep prompting until you get inputs that are valid
@@ -54,6 +56,7 @@ string outputFilePath = $@"C:\Users\John\source\repos\TextFileCharacterCodeRepla
 
 try
 {
+    //TODO: Add depedency injection.
     ICharacterCodesRetriever characterCodesRetriever = new CharacterCodesRetriever();
 
     IEnumerable<CharacterCodePair> characterCodePairs = characterCodesRetriever.GetCharacterCodePairsFromFile(csvFilePath);
@@ -79,7 +82,6 @@ catch (Exception ex)
     //TODO: Add some type of prompt to the user.
     throw;
 }
-
 
 // if something wrong with csv data give line number or some other info to help the user find it.
 //need to clean data that comes in - remove new line characters, tabs, etc...
