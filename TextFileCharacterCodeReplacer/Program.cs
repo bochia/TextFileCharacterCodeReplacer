@@ -13,7 +13,6 @@ try
 {
     string textFilePath = string.Empty;
     textFilePath = promptService.PromptUserForInputTextFilePath();
-    string textFileExtension = Path.GetExtension(textFilePath);
 
     string csvFilePath = string.Empty;
     csvFilePath = promptService.PromptUserForCharacterCodeCsvFilePath();
@@ -22,8 +21,7 @@ try
     IEnumerable<CharacterCodePair> characterCodePairs = characterCodesRetriever.GetCharacterCodePairsFromFile(csvFilePath);
     if (characterCodePairs == null || characterCodePairs.Count() == 0)
     {
-        promptService.WriteErrorToConsole("No character code records found in csv file.");
-        //TODO: how do we stop execution here?
+        throw new Exception("No character code records found in csv file.");
     }
 
     Console.WriteLine("Reading contents of text file...");
@@ -41,8 +39,9 @@ try
     Console.WriteLine("Finished replacing all desired characters.");
 
     Console.WriteLine("Attempting to write text file updates to output file.");
-    string outputFileName = "DevelopmentOutputFileName"; //TODO: Should this also be an input?
-    string outputFilePath = $@"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\{outputFileName}{textFileExtension}";
+    string textFileExtension = Path.GetExtension(textFilePath);
+    string outputFilePrefix = "_Converted"; //TODO: Should this also be an input?
+    string outputFilePath = $"{textFilePath.Replace(textFileExtension, string.Empty)}{outputFilePrefix}{textFileExtension}";
     File.WriteAllText(outputFilePath, updatedTextFileContents);
     Console.WriteLine($"Successfully wrote updates to output file. Location: {outputFilePath}");
 
