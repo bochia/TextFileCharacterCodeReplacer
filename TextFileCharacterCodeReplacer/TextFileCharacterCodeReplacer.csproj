@@ -8,14 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestCsv\**" />
     <Compile Remove="TestFiles\**" />
+    <EmbeddedResource Remove="TestCsv\**" />
     <EmbeddedResource Remove="TestFiles\**" />
+    <None Remove="TestCsv\**" />
     <None Remove="TestFiles\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Files\" />
-    <Folder Include="TestCsv\" />
   </ItemGroup>
 
   <ItemGroup>

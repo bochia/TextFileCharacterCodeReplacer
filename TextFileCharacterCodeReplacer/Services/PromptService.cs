@@ -47,7 +47,7 @@
                 return PromptForFilePath(promptText);
             }
 
-            return csvFilePath.ToString();
+            return csvFilePath;
         }
 
     }
