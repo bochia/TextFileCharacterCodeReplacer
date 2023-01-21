@@ -5,64 +5,27 @@ using TextFileCharacterCodeReplacer.Services.Interfaces;
 //Below is website for finding html codes
 //https://www.toptal.com/designers/htmlarrows/symbols/
 
-string textFilePath = string.Empty;
-string csvFilePath = string.Empty;
-
-//if (args == null || args.Count() == 0)
-//{
-//    //promp the user for both args.
-//}
-//else if (args.Count() == 1)
-//{
-
-//    //print the value for the first arg then request the 2nd arg
-//}
-//else
-//{
-//    // display arg values and move on.
-//}
+IInputValidator inputValidator = new InputValidator();
+IPromptService promptService = new PromptService(inputValidator);
 
 
 
-////add defensive coding.
-////check that the file exists.
-////add while loop to keep prompting until you get inputs that are valid
 
-//bool areInputsValid = false;
-//bool isTextFilePathValid = false;
-//bool isCsvFilePathValid = false;
-
-//while (!areInputsValid)
-//{
-//    if (!isTextFilePathValid)
-//    {
-//        //prompt for input
-//        continue;
-//    }
-
-//    if (!isCsvFilePathValid)
-//    {
-//        //prompt for input
-//        continue;
-//    }
-//}
-
-
-csvFilePath = @"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\CharactersAndCodes.csv";
-textFilePath = @"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\ExampleHtmlFile.html";
-string textFileExtension = Path.GetExtension(textFilePath);
-string outputFileName = "DevelopmentOutputFileName"; //TODO: Should this also be an input?
-string outputFilePath = $@"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\{outputFileName}{textFileExtension}";
-
+ICharacterCodesRetriever characterCodesRetriever = new CharacterCodesRetriever();
 try
 {
-    //TODO: Add depedency injection.
-    ICharacterCodesRetriever characterCodesRetriever = new CharacterCodesRetriever();
+    string textFilePath = string.Empty;
+    textFilePath = promptService.PromptUserForInputTextFilePath();
+    string textFileExtension = Path.GetExtension(textFilePath);
+
+    string csvFilePath = string.Empty;
+    csvFilePath = promptService.PromptUserForCharacterCodeCsvFilePath();
+
 
     IEnumerable<CharacterCodePair> characterCodePairs = characterCodesRetriever.GetCharacterCodePairsFromFile(csvFilePath);
-    if (characterCodePairs == null)
+    if (characterCodePairs == null || characterCodePairs.Count() == 0)
     {
-        //TODO: prompt user that error happened.
+        promptService.WriteErrorToConsole("No characte");
     }
 
     string textFileContents = File.ReadAllText(textFilePath);
@@ -75,6 +38,8 @@ try
                                                                   characterCodePair.CharacterCode);
     }
 
+    string outputFileName = "DevelopmentOutputFileName"; //TODO: Should this also be an input?
+    string outputFilePath = $@"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\{outputFileName}{textFileExtension}";
     File.WriteAllText(outputFilePath, updatedTextFileContents);
 }
 catch (Exception ex)
@@ -89,3 +54,5 @@ catch (Exception ex)
 //TODO: Add unit test project.
 //TODO: Add a test integration project that takes an actual file and changes it.
 //TODO: Create a build process that will package everything up in a zip file for the user to open and use.
+//TODO: add logs to user can see what is happening.
+//TODO: Add depedency injection.
