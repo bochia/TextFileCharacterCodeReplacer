@@ -45,6 +45,10 @@ try
     string outputFilePath = $@"C:\Users\John\source\repos\TextFileCharacterCodeReplacer\TextFileCharacterCodeReplacer\TestCsv\{outputFileName}{textFileExtension}";
     File.WriteAllText(outputFilePath, updatedTextFileContents);
     Console.WriteLine($"Successfully wrote updates to output file. Location: {outputFilePath}");
+
+    // keep console open until user decides to close.
+    Console.Write("Press any key to close this console...");
+    Console.Read();
 }
 catch (Exception ex)
 {
