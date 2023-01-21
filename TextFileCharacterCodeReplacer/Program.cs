@@ -40,7 +40,7 @@ try
 
     Console.WriteLine("Attempting to write text file updates to output file.");
     string textFileExtension = Path.GetExtension(textFilePath);
-    string outputFilePrefix = "_Converted"; //TODO: Should this also be an input?
+    string outputFilePrefix = "_Converted";
     string outputFilePath = $"{textFilePath.Replace(textFileExtension, string.Empty)}{outputFilePrefix}{textFileExtension}";
     File.WriteAllText(outputFilePath, updatedTextFileContents);
     Console.WriteLine($"Successfully wrote updates to output file. Location: {outputFilePath}");
