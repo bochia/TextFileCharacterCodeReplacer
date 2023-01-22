@@ -52,9 +52,5 @@ catch (Exception ex)
     Console.WriteLine("Program execution will now end.");
 }
 
-// if something wrong with csv data give line number or some other info to help the user find it.
-//need to clean data that comes in - remove new line characters, tabs, etc...
-
 //TODO: Add unit test project.
 //TODO: Add a test integration project that takes an actual file and changes it.
-//TODO: Create a build process that will package everything up in a zip file for the user to open and use.
