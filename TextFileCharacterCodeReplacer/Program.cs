@@ -11,11 +11,8 @@ ICharacterCodesRetriever characterCodesRetriever = new CharacterCodesRetriever()
 
 try
 {
-    string textFilePath = string.Empty;
-    textFilePath = promptService.PromptUserForInputTextFilePath();
-
-    string csvFilePath = string.Empty;
-    csvFilePath = promptService.PromptUserForCharacterCodeCsvFilePath();
+    string textFilePath = promptService.PromptUserForInputTextFilePath();
+    string csvFilePath = promptService.PromptUserForCharacterCodeCsvFilePath();
 
     Console.WriteLine("Opening up csv file to retrieve character and character code pairs.");
     IEnumerable<CharacterCodePair> characterCodePairs = characterCodesRetriever.GetCharacterCodePairsFromFile(csvFilePath);
