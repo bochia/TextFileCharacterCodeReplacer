@@ -31,7 +31,7 @@ try
     Console.WriteLine("Beginning replacement of characters with character codes...");
     foreach (CharacterCodePair characterCodePair in characterCodePairs)
     {
-        Console.WriteLine($"Replacing all occurences of {characterCodePair.Character} with {characterCodePair.CharacterCode}");
+        Console.WriteLine($"Replacing all occurences of \"{characterCodePair.Character}\" with \"{characterCodePair.CharacterCode}\"");
         //TODO: Can this be more efficient with strings?
         updatedTextFileContents = updatedTextFileContents.Replace(characterCodePair.Character,
                                                                   characterCodePair.CharacterCode);
