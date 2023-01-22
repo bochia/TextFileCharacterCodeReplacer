@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Files\" />
     <Folder Include="ReleasePackages\" />
   </ItemGroup>
 
@@ -26,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Files\CharactersAndCodes.csv">
+    <None Update="CharactersAndCodes.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
