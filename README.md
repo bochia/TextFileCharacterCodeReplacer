@@ -16,7 +16,7 @@ Below is the example html file we will be using. We will replace the special cha
 
 Open up the csv file from the release package. It should look like this.
 
-![image](https://user-images.githubusercontent.com/41290896/215287158-0abcde0b-2505-4ab0-9cd1-9ac2454395df.png)
+![image](https://user-images.githubusercontent.com/41290896/215287173-bd9082b1-d17d-4bf2-b742-76735919255b.png)
 
 Add in your desired characters and their respective codes that you want them to be replaced with.
 
