@@ -32,7 +32,7 @@ It should look something like this.
 
 Follow the prompts. First enter the path to the text file you want to edit. Hit Enter.
 
-![image](https://user-images.githubusercontent.com/41290896/215286135-127db50e-509a-4418-8140-e61fb1fa9303.png)
+![image](https://user-images.githubusercontent.com/41290896/215287253-cd38e3b0-7772-46db-a34f-42e4a0427c1b.png)
 
 Next enter the path to the csv file that you have added characters and character codes to. Hit Enter.
 
