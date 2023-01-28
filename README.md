@@ -7,7 +7,7 @@ Download the zip file and find the ReleasePackages folder. Underneath the Releas
 ![image](https://user-images.githubusercontent.com/41290896/215287032-cf8719d1-75d2-45ea-86b8-615ab9dd7389.png)
 
 
-You can move these files to your desired location. You can delete the .pdb file its not required.
+You can move these files to your desired location. Also you can delete the .pdb file as it's not actually required.
 
 ## Example of how to use:
 Below is the example html file we will be using. We will replace the special characters in the list section.
@@ -16,7 +16,7 @@ Below is the example html file we will be using. We will replace the special cha
 
 Open up the csv file from the release package. It should look like this.
 
-![image](https://user-images.githubusercontent.com/41290896/215285578-b0870fab-5981-435a-960d-879ce87e36c5.png)
+![image](https://user-images.githubusercontent.com/41290896/215287158-0abcde0b-2505-4ab0-9cd1-9ac2454395df.png)
 
 Add in your desired characters and their respective codes that you want them to be replaced with.
 
