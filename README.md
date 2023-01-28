@@ -2,11 +2,12 @@
 Opens any text based file and replaces all occurrences of a character with its associated character code. Character vs Character code pairs are specified in a csv file.
 
 ## Installation:
-Download the zip file and find the ReleasePackages folder. Underneath the ReleasePackages folder find the folder that represents your OS. In that folder there should be two files.
-1.) The executable/app file.
-2.) A csv file.
+Download the zip file and find the ReleasePackages folder. Underneath the ReleasePackages folder find the folder that represents your OS. The folder should have the following files.
 
-Copy these two files and move them to your desired location.
+![image](https://user-images.githubusercontent.com/41290896/215287032-cf8719d1-75d2-45ea-86b8-615ab9dd7389.png)
+
+
+You can move these files to your desired location. You can delete the .pdb file its not required.
 
 ## Example of how to use:
 Below is the example html file we will be using. We will replace the special characters in the list section.
@@ -44,7 +45,3 @@ The application will begin replacing all characters with the respective codes yo
 Once the app has finished running hit enter to close the console. Here is our resulting file.
 ![image](https://user-images.githubusercontent.com/41290896/215286882-da48a4f7-846d-47c1-a328-5efa840fd121.png)
 ![image](https://user-images.githubusercontent.com/41290896/215286905-8499cc08-262a-4aac-8010-7102d3481869.png)
-
-
-
-
