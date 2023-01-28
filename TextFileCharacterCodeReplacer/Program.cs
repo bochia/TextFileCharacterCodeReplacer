@@ -41,10 +41,6 @@ try
     string outputFilePath = $"{textFilePath.Replace(textFileExtension, string.Empty)}{outputFilePrefix}{textFileExtension}";
     File.WriteAllText(outputFilePath, updatedTextFileContents);
     Console.WriteLine($"Successfully wrote updates to output file. Location: {outputFilePath}");
-
-    // keep console open until user decides to close.
-    Console.Write("Press enter to close this console...");
-    Console.Read();
 }
 catch (Exception ex)
 {
@@ -52,5 +48,8 @@ catch (Exception ex)
     Console.WriteLine("Program execution will now end.");
 }
 
+// keep console open until user decides to close.
+Console.Write("Press enter to close this console...");
+Console.Read();
 //TODO: Add unit test project.
 //TODO: Add a test integration project that takes an actual file and changes it.
